@@ -32,7 +32,7 @@
   },
   "build": {
     "productName": "ExcelProcessor",
-    "appId": "org.erb.excel-processor",
+    "appId": "com.rd.excelprocessor",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -90,18 +90,18 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "tax_excel_process",
+      "repo": "tax_excel_process"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/rajeshd50/tax_excel_process"
   },
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "Rajesh Dan",
+    "email": "rajeshdan50@gmail.com",
+    "url": "https://github.com/rajeshd50/tax_excel_process"
   },
   "contributors": [
     {
@@ -112,12 +112,12 @@
     {
       "name": "John Tran",
       "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
+      "url": "https://github.com/rajeshd50/tax_excel_process"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.comrajeshd50/tax_excel_process/issues"
   },
   "keywords": [
     "electron",
@@ -130,7 +130,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/rajeshd50/tax_excel_process",
   "jest": {
     "testURL": "http://localhost/",
     "testEnvironment": "jsdom",

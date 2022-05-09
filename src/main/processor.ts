@@ -153,6 +153,9 @@ export default class TaxProcessor {
       allDataSheet.addRow([
         'GSTIN',
         'Name',
+        'Invoice Number',
+        'Invoice Date',
+        'Invoice value',
         'Total Taxable',
         'IGST',
         'CGST',
@@ -163,6 +166,9 @@ export default class TaxProcessor {
         allDataSheet.addRow([
           allData[i].suppgstin,
           allData[i].suppname,
+          allData[i].invoiceno,
+          allData[i].invoicedate,
+          allData[i].invoicevalue,
           allData[i].taxable,
           allData[i].igst,
           allData[i].cgst,

@@ -1,12 +1,12 @@
 {
   "name": "excel_processor",
-  "version": "4.5.0",
-  "description": "A foundation for scalable desktop apps",
+  "version": "5.0.0",
+  "description": "Excel processor",
   "main": "./dist/main/main.js",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://github.com/electron-react-boilerplate"
+    "name": "Rajesh Dan",
+    "email": "rajeshdan50@gmail.com",
+    "url": "https://github.com/rajeshd50/tax_excel_process"
   },
   "scripts": {
     "electron-rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
