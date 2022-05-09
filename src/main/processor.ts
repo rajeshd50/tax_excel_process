@@ -147,6 +147,7 @@ export default class TaxProcessor {
       let allData: any[] = await this.getMultiple(
         `SELECT * from process_data WHERE process_id = '${this.processingId}' ORDER BY id ASC`
       );
+      const nameMap: any = {};
       const workbook = new ExcelJS.Workbook();
       const allDataSheet = workbook.addWorksheet('All Data');
       allDataSheet.addRow([
@@ -168,18 +169,28 @@ export default class TaxProcessor {
           allData[i].sgst,
           allData[i].cess,
         ]);
+        nameMap[allData[i].suppgstin] = allData[i].suppname;
       }
       allData = [];
       const opSheet = workbook.addWorksheet('Output');
-      opSheet.addRow(['GSTIN', 'Name', 'IGST', 'CGST', 'SGST', 'CESS']);
+      opSheet.addRow([
+        'GSTIN',
+        'Name',
+        'Total',
+        'IGST',
+        'CGST',
+        'SGST',
+        'CESS',
+      ]);
       allData = await this.getMultiple(
-        `SELECT suppgstin, suppname, SUM(igst) AS igst, SUM(cgst) AS cgst, SUM(sgst) AS sgst, SUM(cess) AS cess  from process_data WHERE process_id = "${this.processingId}" GROUP BY suppgstin, suppname`
+        `SELECT suppgstin, SUM(taxable) AS taxable, SUM(igst) AS igst, SUM(cgst) AS cgst, SUM(sgst) AS sgst, SUM(cess) AS cess  from process_data WHERE process_id = "${this.processingId}" GROUP BY suppgstin`
       );
 
       for (let i = 0; i < allData.length; i += 1) {
         opSheet.addRow([
           allData[i].suppgstin,
-          allData[i].suppname,
+          nameMap[allData[i].suppgstin],
+          allData[i].taxable,
           allData[i].igst,
           allData[i].cgst,
           allData[i].sgst,
